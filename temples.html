@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Album</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 600px)">
+    <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <nav>
+            <button id="menu" aria-expanded="false" aria-controls="navigation-menu"></button>
+            <ul id="navigation-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Old</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Main Temple Gallery</h1>
+        <div class="temple-gallery">
+            <figure>
+                <img src="images/la-temple.webp" alt="Los Angeles Temple">
+                <figcaption>Los Angeles Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/san-diego-temple.webp" alt="San Diego Temple">
+                <figcaption>San Diego Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/lima-peru-temple.webp" alt="Temple Name 3">
+                <figcaption>Lima Peru Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/oakland-temple.webp" alt="Oakland Temple">
+                <figcaption>Oakland Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/newport-beach-temple.webp" alt="Newport Beach Temple">
+                <figcaption>Newport Beach Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/san-salvador-temple.webp" alt="San Salvador Temple">
+                <figcaption>San Salvador Temple</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | 📺 Chris Aparicio 📺 | California, USA</p>
+        <p>Last modified: <span id="lastmodified"></span></p>
+    </footer>
+</body>
+</html>
