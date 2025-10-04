@@ -1,0 +1,103 @@
+/* Custom properties (CSS variables) for a cohesive design */
+:root {
+    --primary-color: #f7b231; /* Golden yellow, inspired by LA's sunsets */
+    --secondary-color: #1a1a1a; /* Dark grey for text */
+    --light-color: #ffffff; /* White for backgrounds */
+    --accent-color: #5c6ac4; /* A cool blue for links */
+    --heading-font: 'Arial Black', sans-serif;
+    --body-font: 'Arial', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-color);
+    color: var(--secondary-color);
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-family: var(--heading-font);
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    position: relative;
+}
+
+.hero picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Main Content and Cards */
+.section-container {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.card {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    color: var(--accent-color);
+    font-family: var(--heading-font);
+    margin-top: 0;
+}
+
+.card-content ul, .card-content ol {
+    padding-left: 1.5rem;
+}
+
+/* place-large.css */
+.section-container {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.weather-card {
+    grid-column: 1 / 4; /* Stretch weather card across all columns */
+}
+
+.weather-heading::after {
+    content: " ⛅"; /* Pseudo-element for the weather icon in wide view */
+}
+
+.weather-icon-mobile {
+    display: none; /* Hide SVG in wider views */
+}
+
+.weather-data {
+    text-align: center;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 1rem;
+}
+
+.footer-content {
+    border-top: 1px solid var(--primary-color);
+    padding-top: 1rem;
+}
