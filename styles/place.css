@@ -3,8 +3,8 @@
     --secondary-color: #1a1a1a;
     --light-color: #ffffff;
     --accent-color: #5c6ac4;
-    --heading-font: 'Arial Black', sans-serif;
-    --body-font: 'Arial', sans-serif;
+    --heading-font: "Merriweather Sans", sans-serif;
+    --body-font: "Roboto", sans-serif;
 }
 
 body {
