@@ -1,0 +1,144 @@
+:root {
+    --primary-color: #f7b231;
+    --secondary-color: #1a1a1a;
+    --light-color: #ffffff;
+    --accent-color: #5c6ac4;
+    --heading-font: 'Arial Black', sans-serif;
+    --body-font: 'Arial', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: var(--secondary-color);
+}
+
+/* Header */
+.top-header {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 1rem;
+    text-align: center;
+    font-family: var(--heading-font);
+}
+
+.top-header h1 {
+    margin: 0;
+}
+
+/* Hero Section and Card Container */
+.hero-and-cards-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Card Styling */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.card {
+    background-color: var(--light-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    padding: 0.5rem 1rem;
+}
+
+.card-header h2 {
+    margin: 0;
+    color: var(--light-color);
+    font-family: var(--heading-font);
+    font-size: 1.25rem;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+/* Weather Icon and Data Styling */
+.weather-icon-wrapper img {
+    width: 50px;
+    height: auto;
+    margin: 0 auto 1rem;
+    display: block;
+}
+
+.weather-data {
+    text-align: center;
+}
+
+#windchill {
+    font-weight: normal;
+    display: inline;
+}
+
+/* Mobile View (default) */
+@media (max-width: 1000px) {
+    .card-container {
+        padding: 1.5rem;
+    }
+}
+
+/* Wide View (PC) Layout */
+@media (min-width: 1001px) {
+    .hero-and-cards-wrapper {
+        position: relative;
+        width: 100%;
+        margin-bottom: 0; 
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        width: 90%;
+        padding: 0;
+        z-index: 10;
+    }
+
+    .card {
+        flex-basis: 400px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 1rem;
+}
+
+.footer-content {
+    border-top: 1px solid var(--primary-color);
+    padding-top: 1rem;
+}

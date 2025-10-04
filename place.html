@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Angeles - City of Angels</title>
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header class="top-header">
+        <h1>Los Angeles, California</h1>
+    </header>
+    <main>
+        <div class="hero-and-cards-wrapper">
+            <div class="hero">
+                <picture>
+                    <source media="(max-width: 1000px)" srcset="images/la-mobile.webp">
+                    <img src="images/la-large.webp" alt="Los Angeles cityscape" width="1500" height="750">
+                </picture>
+            </div>
+            <section class="card-container">
+                <div class="card data-card">
+                    <div class="card-header">
+                        <h2>Data</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Population: 3.8 million (city proper)</li>
+                            <li>Area: 503 square miles</li>
+                            <li>Established: September 4, 1781</li>
+                            <li>Motto: "City of Angels"</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card weather-card">
+                    <div class="card-header">
+                        <h2>Weather</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="weather-icon-wrapper">
+                            <img src="images/weather-icon.svg" alt="Weather icon">
+                        </div>
+                        <div class="weather-data">
+                            <p><strong>Temperature:</strong> 45°F</p>
+                            <p><strong>Conditions:</strong> Cloudy</p>
+                            <p><strong>Wind:</strong> 5 mph</p>
+                            <p><strong>Windchill:</strong> <div id="windchill">N/A</div></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="currentyear"></span> | 📺 Chris Aparicio 📺 | California, USA</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
