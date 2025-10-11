@@ -22,7 +22,6 @@ function calculateWindChill(temperature, windSpeed) {
     }
 }
 
-// Static weather data for demonstration
 const temperature = 45; // °F
 const windSpeed = 5;    // mph
 
