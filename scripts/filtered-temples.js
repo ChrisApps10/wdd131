@@ -5,14 +5,6 @@ currentYearSpan.textContent = today.getFullYear();
 const lastModifiedSpan = document.getElementById("lastmodified");
 lastModifiedSpan.textContent = document.lastModified;
 
-const hamButton = document.querySelector('#menu');
-const navigation = document.querySelector('#navigation-menu');
-
-hamButton.addEventListener('click', () => {
-    navigation.classList.toggle('open');
-    hamButton.classList.toggle('open');
-});
-
 const temples = [
     {
         templeName: "Los Angeles California",
@@ -100,44 +92,83 @@ const temples = [
     },
 ];
 
-function createTempleCards(filteredTemples) {
-    const container = document.getElementById('temple-cards-container');
-    container.innerHTML = ''; // Clear existing cards
+const mainContainer = document.querySelector('.temple-grid');
+
+const createTempleCard = (temple) => {
+    const card = document.createElement('section');
+    card.classList.add('temple-card');
+
+    const image = document.createElement('img');
+    image.src = temple.imageUrl;
+    image.alt = temple.templeName;
+    image.loading = 'lazy';
+
+    const details = document.createElement('div');
+    details.classList.add('details');
+
+    const name = document.createElement('h3');
+    name.textContent = temple.templeName;
+
+    const location = document.createElement('p');
+    location.textContent = `Location: ${temple.location}`;
+
+    const dedicated = document.createElement('p');
+    dedicated.textContent = `Dedicated: ${temple.dedicated}`;
+
+    const area = document.createElement('p');
+    area.textContent = `Area: ${temple.area.toLocaleString()} sq ft`;
+
+    details.appendChild(name);
+    details.appendChild(location);
+    details.appendChild(dedicated);
+    details.appendChild(area);
+
+    card.appendChild(image);
+    card.appendChild(details);
+
+    return card;
+};
+
+const displayTemples = (filteredTemples) => {
+    mainContainer.innerHTML = '';
     filteredTemples.forEach(temple => {
-        const card = document.createElement('figure');
-        // Add classes and other attributes as needed
-        card.innerHTML = `
-            <h2>${temple.templeName}</h2>
-            <p>Location: ${temple.location}</p>
-            <p>Dedicated: ${temple.dedicated}</p>
-            <p>Size: ${temple.area} sq ft</p>
-            <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
-        `;
-        container.appendChild(card);
+        mainContainer.appendChild(createTempleCard(temple));
     });
-}
-document.addEventListener('DOMContentLoaded', () => {
-    // Initial display of all temples
-    createTempleCards(temples);
+};
 
-    // Event listeners for navigation links
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const filter = event.target.dataset.filter;
-            let filteredTemples = [];
+document.querySelector('nav').addEventListener('click', (event) => {
+    if (event.target.tagName === 'BUTTON') {
+        const filter = event.target.id;
+        let filteredTemples = [];
 
-            if (filter === 'home') {
+        switch (filter) {
+            case 'old':
+                filteredTemples = temples.filter(temple => {
+                    const year = parseInt(temple.dedicated.split(',')[0]);
+                    return year < 1900;
+                });
+                break;
+            case 'new':
+                filteredTemples = temples.filter(temple => {
+                    const year = parseInt(temple.dedicated.split(',')[0]);
+                    return year > 2000;
+                });
+                break;
+            case 'large':
+                filteredTemples = temples.filter(temple => temple.area > 90000);
+                break;
+            case 'small':
+                filteredTemples = temples.filter(temple => temple.area < 10000);
+                break;
+            case 'home':
+            default:
                 filteredTemples = temples;
-            } else if (filter === 'old') {
-                filteredTemples = temples.filter(temple => new Date(temple.dedicated).getFullYear() < 1900);
-            }
-            // Add more conditions for 'new', 'large', and 'small'
-            
-            createTempleCards(filteredTemples);
-        });
-    });
+                break;
+        }
+        displayTemples(filteredTemples);
+    }
 });
-document.getElementById('currentYear').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = document.lastModified;
+
+document.addEventListener('DOMContentLoaded', () => {
+    displayTemples(temples);
+});
