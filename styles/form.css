@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700;900&family=Roboto:wght@400;700&display=swap');
-
 :root {
     --primary-color: #334e68;
     --secondary-color: #f4f6f8;
@@ -19,6 +17,8 @@ body {
 }
 
 header {
+
+    font-family: var(--heading-font);
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: 1rem;
