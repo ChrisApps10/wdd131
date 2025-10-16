@@ -3,10 +3,12 @@
     --secondary-color: #f4f6f8;
     --accent-color: #a4c4e0;
     --border-color: #ccc;
+    --main-font: 'Roboto', sans-serif;
+    --heading-font: 'Merriweather Sans', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--main-font);
     line-height: 1.6;
     margin: 0;
     padding: 0;
