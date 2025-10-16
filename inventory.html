@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDM Inventory Page</title>
+    <meta name="description" content="Inventory page for JDM website">
+    <meta name="author" content="Chris Aparicio">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MerriweatherSans:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/jdm.css">
+    <link rel="stylesheet" href="styles/jdm-large.css" media="screen and (max-width: 768px)">
+    <script src="scripts/jdm.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="jdm.html" class="logo">
+                <img src="images/logo.jpg" alt="JDM Legends Logo" class="header-logo">
+                <span>JDM Legends Auto</span>
+            </a>
+            <button class="nav-toggle" aria-controls="main-navigation" aria-expanded="false">
+                <span class="hamburger-icon"></span>
+            </button>
+            <ul class="nav-menu" id="main-navigation">
+                <li><a href="jdm.html">Home</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <section class="inventory-listing">
+        <h1>Current Inventory</h1>
+        <p>Browse our collection of classic and modern JDM vehicles.</p>
+        <div class="inventory-grid">
+        </div>
+    </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | 📺 Chris Aparicio 📺 | California, USA</p>
+        <p>Last modified: <span id="lastmodified"></span></p>
+    </footer>
+</body>
+</html>

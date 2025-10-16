@@ -1,0 +1,79 @@
+@media (min-width: 768px) {
+    .inventory-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+}
+
+    header {
+        padding: 1rem 2rem;
+        color: var(--primary-color);
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        background-color: transparent;
+        margin-left: auto;
+    }
+    
+    .nav-menu li {
+        padding: 0;
+        margin-left: 2rem;
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        padding: 0;
+        color: var(--primary-color);
+    }
+
+    main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: var(--secondary-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .hero {
+        padding: 4rem;
+    }
+
+    .hero-title {
+        font-size: 3em;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2em;
+    }
+
+    .inventory-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    button[type="submit"] {
+        width: auto;
+    }
+
+    footer {
+        text-align: center;
+        color: var(--secondary-color);
+        background-color: var(--primary-color);
+        color: #999;
+        background-color: transparent;
+    }

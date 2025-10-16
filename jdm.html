@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDM Home Page</title>
+    <meta name="description" content="Home page for JDM website">
+    <meta name="author" content="Chris Aparicio">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MerriweatherSans:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/jdm.css">
+    <link rel="stylesheet" href="styles/jdm-large.css" media="screen and (max-width: 768px)">
+    <script src="scripts/jdm.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="jdm.html" class="logo">
+                <img src="images/logo.jpg" alt="JDM Legends Logo" class="header-logo">
+                <span>JDM Legends Auto</span>
+            </a>
+            <button class="nav-toggle" aria-controls="main-navigation" aria-expanded="false">
+                <span class="hamburger-icon"></span>
+            </button>
+            <ul class="nav-menu" id="main-navigation">
+                <li><a href="jdm.html">Home</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <section class="hero">
+        <h1 class="hero-title">Your US Source for JDM Legends</h1>
+        <p class="hero-subtitle">Bringing the best of Japanese Domestic Market cars to American enthusiasts.</p>
+        <a href="inventory.html" class="cta-button">View Inventory</a>
+    </section>
+    <section class="featured-cars">
+        <h2>Featured Vehicles</h2>
+        <div class="carousel">
+        </div>
+    </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | 📺 Chris Aparicio 📺 | California, USA</p>
+        <p>Last modified: <span id="lastmodified"></span></p>
+    </footer>
+</body>
+</html>

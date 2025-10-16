@@ -1,0 +1,361 @@
+:root {
+    --primary-color: #1F3441;
+    --secondary-color: #fff;
+    --accent1-color: #fdd8c0; 
+    --accent2-color: #ffefe5;
+    --heading-font: 'Merriweather Sans', sans-serif;
+    --main-font: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--main-font);
+    line-height: 1.6;
+    background-color: var(--primary-color);
+    color: var(--accent1-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--accent1-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 11;
+}
+
+.logo {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    width: 125px;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+.nav-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    order: 1;
+    margin-left: auto;
+}
+
+.hamburger-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    position: relative;
+    transition: all 0.3s;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    transition: all 0.3s;
+}
+
+.hamburger-icon::before {
+    top: -8px;
+}
+
+.hamburger-icon::after {
+    top: 8px;
+}
+
+.nav-toggle.is-active .hamburger-icon {
+    background: transparent;
+}
+
+.nav-toggle.is-active .hamburger-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.nav-toggle.is-active .hamburger-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    text-align: center;
+    list-style: none;
+    z-index: 12;
+}
+
+.nav-menu.is-active {
+    display: flex;
+}
+
+.nav-menu li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--accent1-color);
+}
+
+.nav-menu li:last-child {
+    border-bottom: none;
+}
+
+.nav-menu a {
+    display: block;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+}
+
+main {
+    padding: 1rem;
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+}
+
+.hero {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: url('../images/hero.jpg') no-repeat center center/cover;
+    border-radius: 5px;
+    position: relative;
+    color: var(--secondary-color);
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-title, .hero-subtitle {
+    position: relative;
+    z-index: 1;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 2px black;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    z-index: 2;
+}
+
+.cta-button:hover {
+    background-color: #2a3d53;
+}
+
+.featured-vehicles {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.featured-vehicles h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem 0;
+    justify-content: center;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 300px;
+    scroll-snap-align: start;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.car-details {
+    padding: 1rem;
+    background-color: var(--accent1-color);
+    color: var(--primary-color);
+    flex-grow: 1;
+}
+
+.carousel-item:hover {
+    transform: translateY(-5px);
+}
+
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.car-card, .car-item {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--accent1-color);
+    color: var(--primary-color);
+}
+
+.car-card:hover, .car-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.car-card img, .car-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.car-card .car-details, .car-item .car-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.car-card .car-details h3, .car-item .car-info h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.inquire-button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.inquire-button:hover {
+    background-color: #2a3d53;
+}
+
+form {
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    font-size: 0.9em;
+    margin-top: 1rem;
+    color: var(--primary-color);
+}
+
+input,
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 1px solid var(--accent2-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--accent1-color);
+    color: var(--primary-color);
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 1rem 2rem;
+    margin-top: 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #2a3d53;
+}
+
+#form-message {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    background-color: var(--primary-color);
+}

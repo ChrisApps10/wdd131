@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDM Contact Page</title>
+    <meta name="description" content="Contact page for JDM website">
+    <meta name="author" content="Chris Aparicio">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MerriweatherSans:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/jdm.css">
+    <link rel="stylesheet" href="styles/jdm-large.css" media="screen and (max-width: 768px)">
+    <script src="scripts/jdm.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="jdm.html" class="logo">
+                <img src="images/logo.jpg" alt="JDM Legends Logo" class="header-logo">
+                <span>JDM Legends Auto</span>
+            </a>
+            <button class="nav-toggle" aria-controls="main-navigation" aria-expanded="false">
+                <span class="hamburger-icon"></span>
+            </button>
+            <ul class="nav-menu" id="main-navigation">
+                <li><a href="jdm.html">Home</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <section class="contact-form-container">
+        <h1>Contact Us</h1>
+        <p>For more information or to inquire about a specific vehicle and pricing, please fill out the form below.</p>
+        <fieldset>
+                <legend>Car Inquiry Selection</legend>
+                <div class="inquiry-group">
+                    <label for="carModel">Car Model</label>
+                    <select id="carModel" name="carModel" required>
+                        <option value="" disabled selected>Select a Model ...</option>
+                    </select>
+                </div>
+            </fieldset>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send Message</button>
+            <p id="form-message"></p>
+        </form>
+    </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | 📺 Chris Aparicio 📺 | California, USA</p>
+        <p>Last modified: <span id="lastmodified"></span></p>
+    </footer>
+</body>
+</html>
