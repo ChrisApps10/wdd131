@@ -1,0 +1,52 @@
+@media screen and (min-width: 768px) {
+    body {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+    }
+
+    main {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: var(--form-bg-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    
+    header {
+        padding: 2rem 1rem;
+    }
+
+    form legend {
+        text-align: left;
+        width: auto;
+        padding: 0 0.5rem;
+        background-color: transparent;
+        color: var(--primary-color);
+    }
+
+    label {
+        font-size: 1em;
+    }
+
+    .rating-container {
+        justify-content: flex-end;
+    }
+
+    .rating-container label {
+        font-size: 2rem;
+    }
+
+    .checkbox-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    input[type="submit"] {
+        width: auto;
+    }
+
+    footer {
+        color: #999;
+    }
+}
